@@ -1,0 +1,276 @@
+/**
+ * Passwort Generator - Styles
+ * Version 2.0
+ */
+
+/* CSS Variables für einfache Anpassung */
+:root {
+    --pwg-bg: #0f172a;
+    --pwg-card-bg: #1e293b;
+    --pwg-border: #334155;
+    --pwg-text: #f1f5f9;
+    --pwg-text-muted: #94a3b8;
+    --pwg-accent: #38bdf8;
+    --pwg-accent-hover: #7dd3fc;
+    --pwg-success: #34d399;
+    --pwg-warning: #fbbf24;
+    --pwg-danger: #f87171;
+    --pwg-radius: 12px;
+    --pwg-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+    --pwg-font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Container */
+.pwg-container {
+    font-family: var(--pwg-font);
+    max-width: 480px;
+    margin: 1.5rem auto;
+}
+
+/* Card */
+.pwg-card {
+    background: var(--pwg-card-bg);
+    border: 1px solid var(--pwg-border);
+    border-radius: var(--pwg-radius);
+    padding: 1.75rem;
+    box-shadow: var(--pwg-shadow);
+}
+
+/* Titel */
+.pwg-title {
+    margin: 0 0 1.25rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--pwg-text);
+}
+
+/* Passwort-Ausgabe */
+.pwg-output-wrapper {
+    margin-bottom: 1.5rem;
+}
+
+.pwg-output-group {
+    display: flex;
+    gap: 0.5rem;
+    align-items: stretch;
+}
+
+.pwg-output {
+    flex: 1;
+    min-width: 0;
+    padding: 0.75rem 1rem;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    background: var(--pwg-bg);
+    border: 2px solid var(--pwg-border);
+    border-radius: 8px;
+    color: var(--pwg-text);
+}
+
+.pwg-output:focus {
+    outline: none;
+    border-color: var(--pwg-accent);
+}
+
+.pwg-icon-btn {
+    width: 44px;
+    padding: 0;
+    background: var(--pwg-border);
+    border: 2px solid var(--pwg-border);
+    border-radius: 8px;
+    color: var(--pwg-text);
+    cursor: pointer;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.pwg-icon-btn:hover {
+    background: var(--pwg-accent);
+    border-color: var(--pwg-accent);
+}
+
+/* Buttons */
+.pwg-btn {
+    padding: 0.65rem 1.25rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pwg-btn-primary {
+    background: var(--pwg-accent);
+    color: var(--pwg-bg);
+}
+
+.pwg-btn-primary:hover {
+    background: var(--pwg-accent-hover);
+    transform: translateY(-1px);
+}
+
+.pwg-btn-generate {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.9rem 1.5rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    color: white;
+}
+
+.pwg-btn-generate:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+/* Stärke-Anzeige */
+.pwg-strength-meter {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.pwg-strength-bar {
+    flex: 1;
+    height: 6px;
+    background: var(--pwg-border);
+    border-radius: 3px;
+    transition: width 0.3s ease, background 0.3s ease;
+}
+
+.pwg-strength-meter.pwg-strength-weak .pwg-strength-bar { background: var(--pwg-danger); }
+.pwg-strength-meter.pwg-strength-fair .pwg-strength-bar { background: var(--pwg-warning); }
+.pwg-strength-meter.pwg-strength-good .pwg-strength-bar { background: var(--pwg-accent); }
+.pwg-strength-meter.pwg-strength-strong .pwg-strength-bar { background: var(--pwg-success); }
+
+.pwg-strength-label {
+    font-size: 0.8rem;
+    color: var(--pwg-text-muted);
+    min-width: 70px;
+}
+
+/* Optionen */
+.pwg-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.pwg-option-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.pwg-label {
+    font-size: 0.9rem;
+    color: var(--pwg-text-muted);
+}
+
+.pwg-value {
+    font-weight: 600;
+    color: var(--pwg-accent);
+}
+
+/* Range Slider */
+.pwg-range {
+    width: 100%;
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--pwg-border);
+    border-radius: 4px;
+}
+
+.pwg-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--pwg-accent);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.pwg-range::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+}
+
+.pwg-range::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: var(--pwg-accent);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Checkboxen */
+.pwg-checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.pwg-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--pwg-text);
+}
+
+.pwg-checkbox input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--pwg-accent);
+    cursor: pointer;
+}
+
+.pwg-special-count-row {
+    transition: opacity 0.2s ease;
+}
+
+/* Toast */
+.pwg-toast {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    padding: 0.75rem 1.5rem;
+    background: var(--pwg-card-bg);
+    border: 1px solid var(--pwg-border);
+    border-radius: 8px;
+    color: var(--pwg-text);
+    font-size: 0.9rem;
+    box-shadow: var(--pwg-shadow);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 999999;
+}
+
+.pwg-toast.pwg-toast-show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.pwg-toast.pwg-toast-success { border-left: 4px solid var(--pwg-success); }
+.pwg-toast.pwg-toast-error { border-left: 4px solid var(--pwg-danger); }
+
+/* Light Mode Unterstützung (optional via body-Klasse) */
+body.pwg-light-mode .pwg-container,
+.pwg-container.pwg-light-mode {
+    --pwg-bg: #f8fafc;
+    --pwg-card-bg: #ffffff;
+    --pwg-border: #e2e8f0;
+    --pwg-text: #1e293b;
+    --pwg-text-muted: #64748b;
+    --pwg-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.15);
+}
